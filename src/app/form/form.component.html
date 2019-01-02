@@ -1,0 +1,39 @@
+<div class="container">
+	<h1> Add Records </h1>
+	<form [formGroup]="form" (ngSubmit)="onSubmit(form.value)">
+		 <div class="form-group">
+			<label> FirstName : </label> 
+				<input type="text" class="form-control" value={{firstname}} required formControlName="firstname" placeholder="FirstName" [(ngModel)] ="firstName"> {{firstName}}
+			</div>
+			<div class="form-group">
+				<label> LastName : </label> 
+				<input type="text" class="form-control" name="lastname" required formControlName="lastname" placeholder="LastName">
+			</div>
+			<div class="form-group">
+				<label> Eamil ID : </label> 
+				<input type="text" class="form-control" name="lastname" required formControlName="emailId" placeholder="Eamil">
+			</div>
+			<!--div class="form-group">
+				<label> Gender : </label> 
+			</div>
+			<div class="radio" >
+				<label class="radio-inline">
+					<input type="radio" value="male" name="gender" ngModel >Male
+				</label>
+				<label class="radio-inline">
+        			<input type="radio" value="female" name="gender" ngModel >Female
+				</label>
+			</div-->
+				<!--input type="radio" class="form-control" name="female" required formControlName="gender" > FeMale -->
+			<input type="submit" class="btn btn-info" name="Submit" [disabled]="!form.valid">
+	</form>
+</div>
+
+<!-- 
+<ul>
+<li *ngFor="let formValue of binding">
+	{{formValue.fName}}
+	{{formValue.lName}}
+	{{formValue.emailId}}
+</li>
+{{formName}} -->

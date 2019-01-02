@@ -1,0 +1,22 @@
+<div class="container">
+	<h2> Binding Concept :( </h2>
+	<div class="form-group">
+		 {{bindingComponent}}
+	</div>
+	<hr>
+	<div class="form-group">
+	<h1> Loop printing statically </h1>
+	{{bindingArray[0] }}
+	{{ bindingArray[1] }}
+	{{ bindingArray[2] }}
+	</div>
+	<hr>
+	<div class="form-group">
+	<h2> Loop dynamically </h2>
+	<ul>
+		<li *ngFor="let bindingValue of bindingArray">
+		  {{ bindingValue }}
+		</li>
+	</ul>
+	</div>
+</div>
