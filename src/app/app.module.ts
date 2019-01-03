@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule} from '@angular/forms';
-//import { HttpModule } from '@angular/http';
+import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
@@ -11,7 +11,7 @@ import { GridComponent } from './grid/grid.component';
 
 
 import { RecordService } from './grid/recordServices';
-//import { BindingService } from './binding/binding.service';
+import { APIService } from './services/api-service';
 
 @NgModule({
   declarations: [
@@ -23,11 +23,11 @@ import { RecordService } from './grid/recordServices';
   imports: [
     BrowserModule,
     FormsModule,
-    //HttpModule,
+    HttpClientModule,
     ReactiveFormsModule,
     AppRoutingModule
   ],
-  providers: [RecordService],
+  providers: [RecordService,APIService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { RecordService } from "./recordServices";
+//import { RecordService } from "./recordServices";
+
+import { APIService } from '../services/api-service';
+//import { Observable } from 'rxjs';
+
 
 @Component({
   selector: 'app-grid',
@@ -8,14 +12,19 @@ import { RecordService } from "./recordServices";
 })
 
 export class GridComponent implements OnInit {
-  records:any[];
+  public employee = [];
+
   GridStaticContent:string = "Grid component scope value";
 
-  constructor(private _recordService: RecordService) { }
+  //constructor(private _recordService: RecordService) { }
+
+  constructor(private _apiService: APIService) { }
 
   ngOnInit() {
-    this.records = this._recordService.getEmployees();
+      this._apiService.getEmployees()
+        .subscribe(data => this.employee = data);
   }
+  
   deleteEmployee(empid: any) {
     if(window.confirm('Are sure you want to delete this item ?')){
       //put your delete method logic here

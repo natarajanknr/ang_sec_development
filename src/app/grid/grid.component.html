@@ -12,7 +12,7 @@
 <div>
         {{nameFilter}}
         </div-->
-<table class='table table-striped table-condensed' *ngIf='records && records.length'>
+<table class='table table-striped table-condensed' *ngIf='employee && employee.length'>
 <thead>
 	<tr>
 		<th style="min-width: 80px;">Name</th>
@@ -22,7 +22,7 @@
 	</tr>
 </thead>
 <tbody>
-	<tr *ngFor="let emp of records">
+	<tr *ngFor="let emp of employee">
 	<td>{{emp.name| uppercase}}</td>
 	<td>{{emp.band}}</td>
 	<td>{{emp.location}}</td>
